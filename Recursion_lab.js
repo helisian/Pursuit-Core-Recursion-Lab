@@ -21,15 +21,15 @@ const concatArr = (arr) =>{
 console.log(concatArr(['is', 'it', 'tomorrow']))
 //4.
 const sumEvens = arr => {
-    if (arr.length === 1) return arr[0]
-    arr.forEach(el => {
-    if (el%2 === 0) {
-    let sum = el += sumEvens(arr)
-    return sum
+    if(arr.length === 0) return 0
+    let pop = arr.pop()
+    let even = 0
+    if (pop % 2 === 0) {
+        even = pop
     }
-    })
+    return even + sumEvens(arr)    
 }
-//console.log(sumEvens([2, 3, 5, 6]))
+console.log(sumEvens([2, 3, 5, 6]))
 
 //Problem 5
 const range = (num1, num2) => {
