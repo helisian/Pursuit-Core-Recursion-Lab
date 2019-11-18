@@ -20,13 +20,25 @@ const concatArr = (arr) =>{
 }
 console.log(concatArr(['is', 'it', 'tomorrow']))
 //4.
-const sumEvens = (arr) =>{
-    if(arr.length === 0)
-    return
-    let el = arr.pop()
-    if(el % 2 === 0){
-   return el + sumEvens(arr)
+const sumEvens = arr => {
+    if (arr.length === 1) return arr[0]
+    arr.forEach(el => {
+    if (el%2 === 0) {
+    let sum = el += sumEvens(arr)
+    return sum
     }
-
+    })
 }
-console.log(sumEvens([2, 3, 5, 6]))
+//console.log(sumEvens([2, 3, 5, 6]))
+
+//Problem 5
+const range = (num1, num2) => {
+    let arr = [];
+    if(num1 > num2){
+        return arr;
+    }
+    arr.push(num1);
+    return  arr.concat(range(num1 + 1, num2));
+    }
+console.log(range(1,5))
+
